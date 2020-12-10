@@ -24,7 +24,7 @@ class Jasper < Formula
         "-DGLUT_glut_LIBRARY=#{glut_lib}",
         "-DJAS_ENABLE_AUTOMATIC_DEPENDENCIES=false",
         *std_cmake_args
-      system "make"
+      system "make -j1"
       system "make", "install"
       system "make", "clean"
 
@@ -32,7 +32,7 @@ class Jasper < Formula
         "-DGLUT_glut_LIBRARY=#{glut_lib}",
         "-DJAS_ENABLE_SHARED=OFF",
         *std_cmake_args
-      system "make"
+      system "make -j1"
       lib.install "src/libjasper/libjasper.a"
     end
   end
